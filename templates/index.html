@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyBusiness Analytics</title>
+</head>
+<body>
+    <h1>Liste des ventes</h1>
+
+    <a href="/add">Ajouter une vente</a> |
+    <a href="/dashboard">Dashboard</a>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale[0] }}</td>
+            <td>{{ sale[1] }}</td>
+            <td>{{ sale[2] }}</td>
+            <td>{{ sale[3] }}</td>
+            <td>{{ sale[4] }}</td>
+            <td>{{ sale[5] }}</td>
+            <td>
+                <a href="/delete/{{ sale[0] }}">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
